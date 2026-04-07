@@ -400,7 +400,7 @@ def fetch_stock_data(ticker: str):
     for period in ["6mo", "3mo", "1mo"]:
         try:
             tk = yf.Ticker(ticker)
-            df = tk.history(period=period, interval="1d", auto_adjust=True, actions=False)
+            df = tk.history(period="2y", interval="1wk", auto_adjust=True, actions=False)
 
             if df is not None and not df.empty:
                 # Normalise columns
